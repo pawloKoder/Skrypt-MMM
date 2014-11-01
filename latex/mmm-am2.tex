@@ -319,3 +319,61 @@ czyli w notacji macierzowej
 
 \end{mydef}
 
+\begin{info}
+   Przestrzeń unitarna $\{\vset{V}, <\cdot, \cdot>\}$ jest unormowana (\underline{automatycznie}) -- z normą:
+   \[|\vec{x}| \df \sqrt{\vec{x} \vec{x}}, \; \vec{x} \in \vset{V},\]
+   (tzw, \underline{normą generowaną przez iloczyn skalarny} a w konsekwencji przestrzenią metryczną -- z metryką generowaną przez normę:
+   \[d(\vec{x}, \vec{y}) = |\vec{y}-\vec{x}| = \sqrt{(\vec{y}-\vec{x})\cdot()\vec{y}-\vec{x}}, \; \vec{x},\vec{y} \in \vset{V},\]
+   (jeśli wektory $\vec{x}$, $\vec{y}$ potraktować jako punkty).
+\end{info}
+
+\begin{mydef}
+   Wektory $\vec{x}$ i $\vec{y}$ nazywamy \underline{prostopadłymi} (lub \underline{ortogonalnymi} -- $\vec{x} \perp \vec{y}$), gdy $\vec{x} \cdot \vec{y} = 0$. Natomiast prostopadłe są zbiory $\vset{U}'$ i $\vset{U}''$ przestrzeni $\vset{V}$ ($\vset{U}' \perp \vset{U}''$), jeśli
+   \[\forall \vec{x} \in \vset{U}' \; \forall \vec{y} \in \vset{U}''\; \vec{y} \perp \vec{x} \dend\]
+\end{mydef}
+
+\begin{info}
+   Prawdziwa jest \underline{nierówność Cauchy'ego}
+   \[|\vec{x} \cdot \vec{y} \leq |\vec{x}| |\vec{y}| \dend\]
+\end{info}
+
+\begin{example}
+   w przestrzeni $\real^n$
+   \[\vec{x} \cdot \vec{y} = x_i y_i, \;\; \vec{x} = (x_i), \; \vec{y} = (y_i),\]
+   określa iloczyn skalarny, zwany \underline{standardowym}, który generuje w $\real^n$ tzw, \underline{standardowe} (lub \underline{euklidesowe}) normę i metrykę:
+   \[|\vec{x}| = \sqrt{x_i x_i},\]
+   \[d(\vec{x}, \vec{y}) = \sqrt{(y_i-x_i)(y_i-x_i)} \dend\]
+\end{example}
+
+\begin{example}
+   Niech $U$ oznacza podzbiór otwarty i mierzalny (w sensie Lebesque'a) w $\real^n$ i niech 
+   \[L^2_\rho (U, \real) = \{f \in F(U, \real); \int \limits_{U} \rho(x) f^2(x) dV < \infty\},\]
+   oznacza zbiór funkcji całkowalnych z kwadratem z wagą $\rho$ na $U$ (w sensie Lebesgue'a), gdzie $\rho: U \to \real$ jet funkcją \underline{mierzalną nieujemną}, nazwaną \underline{wagą}. Zbiór ten jest podprzestrzenią liniową przestrzeni $F(U, \real)$, a więc jest przestrzenią wektorową, a przy tym \underline{unitarną} z iloczynem skalarnym:
+   \[<f,g>_\rho = \int \limits_{U} \rho(x)f(x)g(x) dV,\]
+   \[dV = dx_1\cdot ... \cdot dx_n \;\;\text{przy}\;\; x=(x1, ..., x_n) \dend\]
+   Iloczyn skalarny generuje tzw. normę \underline{średniokwadratowa} (i odpowiednią metrykę średniokwadratową) -- z wagą $\rho$ lub ``bez wagi'':
+   \[||g||_\rho = (<f,f>_\rho)^{1/2} = \left(\int\limits_U \rho(x) f^2(x) dV \right)^{1/2}\]
+   \[||g|| = (<f,f>)^{1/2} = \left(\int\limits_U  f^2(x) dV \right)^{1/2}\]
+\end{example}
+
+
+\begin{example}
+   Niech $\{\vset{V}_i; <\cdot, \cdot>_i\}$, $i \in \set{I}$ ($\set{I}$ -- skończony lub przeliczalny zbiór wskaźników) będzie rodziną przestrzeni unitarnych. Niech $\rho = (\rho_i)$ -- ciąg liczbowy ($\rho_i \in \real, i \in \set{I}$). Zbiór
+   \[l^2_\rho = \left\{\vec{x} = (\vec{x}_i) \in \vset{V}; \; \vec{x}_i \in \vset{V}_i\; \forall i \in \set{i}, \; \sum\limits_{i \in\ \set{I}} \rho_i <\vec{x}_i, \vec{x}_i>_i < \infty \right\}\]
+   jest podprzestrzenią liniową przestrzeni wektorowej
+   \[\vset{V} = \{\vec{x} = (\vec{x}_i); \; \vec{x}_i \in \vset{V}_i, \; i in \set{I}\},\]
+   a więc jest przestrzenią wektorową -- przy tym unitarną z iloczynem skalarnym:
+   \[<\vec{x}, \vec{y}>_\rho = \sum\limits_{i\in\set{i}} \rho_i <\vec{x}_i, \vec{y}_i>_i\]
+   i normą generowaną przez ten iloczyn:
+   \[|\vec{x}|_\rho = \left( \sum\limits_{i\in\set{i}} \rho_i <\vec{x}_i, \vec{x}_i>_i \right)^{1/2} \dend\]
+   W szczególności, gdy \underline{ciąg wagowy} jest \underline{jednostkowy}, 
+   tzn. $\vec{\rho} = (1,1, ...)$, mamy przestrzeń z oznaczeniami:
+   \[l^2(\vset{V}), \; <\cdot, \cdot>\; \text{i}\; |\cdot| \dend\]
+   Jeżeli $\vset{V} = \real$ dla wszystkich $i\in\set{i}$, to mamy tzw. przestrzeń ciągów liczbowych (skończonych lub przeliczalnych) \underline{sumowalnych z kwadratem} -- z wagą $\rho$: (t.j. ciągiem wagowym $\rho = (\rho_i)$) lub ``bez wagi'' (tj. ciągiem wagowym jednostkowym):
+
+   \[l^2_\rho \df \left\{ \vec{x} = (x_i); x_i \in\real\; \forall i \in\set{I}, \; \sum\limits_{i\in\set{I}} \rho_i x_i^2 < \infty \right\},\]
+   \[ <\vec{x}, \vec{y}>_\rho = \sum\limits_{i\in\set{I}} \rho_i x_i y_i, \; |\vec{x}|_\rho = \sum\limits_{i\in\set{I}} \rho_i x_i^2,\]
+   
+   (z oznaczeniami $l^2$, $<\cdot, \cdot>$ i $|\cdot|$ przy ``braku wagi'').
+   W przypadku, gdy $\set{I} = \{1,2,3,..,n\}$ przestrzeń $l^2$ pokrywa się z $\real^n$ ze standardowym iloczynem skalarnym i normą.
+\end{example}
