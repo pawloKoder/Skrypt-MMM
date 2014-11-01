@@ -1,0 +1,321 @@
+\section{Przestrzenie liniowe}
+
+\subsection{Konwencja sumacyjna}
+
+W sumach postaci:
+\[A=\sum\limits_{i=1}^{n}\alpha_i\beta_i=\alpha_1\beta_1+\alpha_2\beta_2+\cdots\alpha_n\beta_n,\]
+\[B_i = \sum\limits_{j=1}^{n} \alpha_{ij}\beta_j = \alpha_{i1}\beta_1 + \alpha_{i2}\beta_2+\cdots+\alpha_{in}\beta_n,\]
+\[C=\sum\limits_{i=1}^n \alpha_{ii} = \alpha_{11} + \cdots + \alpha_{nn}\]
+pomijamy symbol $\sum$, jeżeli wskaźniki podlegające sumowaniu, zwane \textbf{martwymi}, powtarzają się.
+
+Zatem piszemy:
+\[A=\alpha_i\alpha_b,\]
+\[B_i=\alpha_{ij}\beta_{j},\]
+\[C=\alpha_{ii}\dend\]
+
+Oznaczenie wskaźnika martwego nie jest istotne:
+\[A=\alpha_i\beta_i=\alpha_k\beta_k=\alpha_1\beta_1+\cdots\alpha_n\beta_n \dend\]
+Wskaźniki nie podlegające sumowaniu zwane wolnymi, muszą być jednakowe po obu stronach równości. Np.:
+\[B_\mathbf{i} = \alpha_{\mathbf{i}j}\beta_j \dend\]
+
+Wskaźniki umieszczamy także na \textbf{górnym poziome} (i bywa, że po lewej stronie \textbf{litery rdzeniowej}). Na przykład:
+\[A=\alpha_i^i,\]
+\[B^j = a^{ij}b_i,\]
+\[\tensor[^k_r]{C}{}= \tensor[^r_k]{\alpha}{_i}\beta_i \dend\]
+
+Nie należy wskaźników na górnym poziomie rozumieć jako wykładników potęg.
+Wielkości potęgowane umieszczamy w nawiasach:
+\[(\alpha^i)^2,\]
+\[(\alpha^i)^j\beta_j,\]
+\[(\alpha_{ij})^k\gamma_k \dend\]
+
+Jeżeli wyróżniamy 'i-ty' składnik sumy
+\[\alpha_i\beta_i = \alpha_1\beta_1+\cdots+\alpha_n\beta_n,\]
+to wskaźnik tego składnika podkreślamy, czyli:
+\[\alpha_i\beta_i = \alpha_1\beta_1+\cdots + \alpha_{\underline{i}} \beta_{\underline{i}}+ \cdots+\alpha_n\beta_n,\]
+
+Wielkościami numerowanymi za pomocą wskaźników mogą być wielkości \textbf{liczbowe} i \textbf{wektorowe} (a także inne obiekty i struktury matematyczne).
+
+\subsection{Pojęcie przestrzeni liniowej}
+
+\begin{mydef}
+  \textbf{Przestrzenią liniową} ( \textbf{wektorową} ) nad ciałem liczb rzeczywistych $\real$ nazywamy niepusty zbiór $\vec{\set{V}}$ elementów, zwanych \textbf{wektorami} (oznaczanych przez $\vec{x}$, $\vec{y}$, ...),
+  wraz z dwoma działaniami:
+  \begin{enumerate}
+   \item \textbf{sumą wektorów} \[\vec{\set{V}} \times \vec{\set{V}} \to \vec{\set{V}}; \; \vec{z} = \vec{x} + \vec{y},\]
+   \item \textbf{iloczynem wektora przez liczbę} \[\real \times \vec{\set{V}} \to \vec{\set{V}}; \; \vec{z} = \alpha \vec{x},\]
+  \end{enumerate}
+  spełniającymi warunki:
+  \begin{enumerate}
+   \item łączności dodawania \[(\vec{x} + \vec{y}) + \vec{z} = \vec{x} + (\vec{y} + \vec{z}),\]
+   \item przemienności dodawania \[\vec{x} + \vec{y} = \vec{y} + \vec{x},\]
+   \item rozdzielności dodawania względem mnożenia \[\alpha (\vec{x} + \vec{y}) = \alpha \vec{x} + \alpha \vec{y},\] \[(\alpha + \beta) \vec{x} = \alpha \vec{x} + \beta \vec{x},\]
+   \item łączności iloczynu \[\alpha(\beta \vec{x}) = (\alpha \beta) \vec{x}\]
+   \item istnienia wektora zerowego \[\vec{0} + \vec{x} = \vec{x} + \vec{0} = \vec{x}\]
+   \item istnienia wektora przeciwnego $-\vec{x}$ do wektora $\vec{x}$ \[\vec{x} + (-\vec{x}) = (-\vec{x}) + \vec{x} = \vec{x} - \vec{x} = \vec{0}\]
+   \item niezmienności wektora mnożonego przez 1 \[1\vec{x} = \vec{x}\]
+  \end{enumerate}
+  dla dowolnych wektorów $\vec{x}$, $\vec{y}$, $\vec{z}$ oraz liczb $\alpha$, $\beta$.
+\end{mydef}
+
+\begin{example}
+   \underline{Przestrzeń arytmetyczna}
+   
+   Zbiór \[\real^n = \{\vec{x} \df (x_1,\cdots,x_n) \ozn (x_i); x_i \in \real \text{dla} i = 1,\cdots,n\},\]
+   czyli \[\real^n = \underbrace{\real \times \cdots \times \real}_{n\; \text{razy}},\]
+   z działaniami
+   \[\vec{x} + \vec{y} \df (x_i+y_i) = (x_1+y_1, \cdots, x_n+y_n),\]
+   \[\alpha \vec{x} \df (\alpha x_i) = (\alpha x_1, \cdots, \alpha x_n),\]
+   dla dowolnych $\vec{x} = (x_i)$, $\vec{y} = (y_i) \in \real^n$ i $\alpha \in \real$, jest przestrzenią wektorową. Wektorem zerowym jest ciąg $n$ zer:
+   \[\vec{0} = (0,\cdots,0)\]
+   a wektorem przeciwnym do wektora - ciągu $\vec{x} = (x_i)$ jest ciąg liczb przeciwnych
+   \[-\vec{x} = (-x_i) = (-x_1, \cdots, -x_n \dend\]
+   
+   Dla $n=1$ wnioskujemy, że $\real$ jest także przestrzenią wektorową przy \[\real^1 \ozn \real, \;\; (x_1) \ozn z \dend\]
+\end{example}
+
+\begin{example}
+   \underline{Przestrzeń funkcyjna}
+   
+   Niech $\Omega$ dowolny zbiór, a $\vec{\set{V}}$ dowolna przestrzeń wektorowa. Zbiór funkcji (odwzorowań)
+   \[F(\Omega, \vec{\set{V}}) = \{\vec{x}=\vec{f}(\xi), \xi\in\Omega\}\]
+   wraz z działaniami:
+   \[(\vec{f} + \vec{g})(\xi) \df \vec{f}(\xi) + \vec{f}(\xi), \xi \in \Omega,\]
+   \[(\alpha \vec{f})(\xi) \df \alpha \vec{f}(\xi), \xi \in \Omega\]
+   dla dowolnych $\vec{x} = \vec{f}(\xi)$, $\vec{g}=\vec{g}(\xi)$ ($\xi\in\Omega$) i $\alpha \in \real$ tworzy przestrzeń wektorową.
+\end{example}
+
+\begin{example}
+  \underline{Przestrzeń ciągów}
+  
+  Niech $\{\vec{\set{V}}_i, i \in I \}$ ($I$ - skończony lub przeliczalny zbiór numerów/wskaźników) będzie rodziną przestrzeni liniowych. Zbiór \[\vec{\set{V}} = \{\vec{x} = (\vec{x}_i; \vec{x}_i \in \vec{\set{V}}_i \text{dla} i \in I\}\]
+  z działaniami:
+  \[\vec{x}+\vec{y}=(\vec{x}_i+\vec{y}_i),\]
+  \[\alpha \vec{x} = (\alpha \vec{x}_i,\]
+  dla dowolnych $\vec{x} = (\vec{x}_i)$,   $\vec{y} = (\vec{y}_i) \in \vec{\set{V}}$ oraz $\alpha \in \real$, jest przestrzenią wektorową.
+  
+  Na przykład, gdy $I = \nat$, to $\vec{x} = (\vec{x}_i) = (\vec{x}_1,\cdots,\vec{x}_n,\cdots)$ - ciąg wektorów a gdy ponadto $\vec{\set{V}}_i = \real$ dla wszystkich $i in I = \nat$, to $\vec{x} = (x_i) = (x_1, \cdots, x_n, \cdots)$ -- ciąg liczbowy.
+\end{example}
+
+\begin{mydef}
+   Zbiór $\vset{U}$ zawarty w przestrzeni wektorowej (liniowej) $\vset{V}$ nazywamy \underline{podprzestrzenią} (liniową) przestrzeni $\vset{V}$, jeżeli $\vset{U}$ z działaniami określonymi w $\vset{V}$ i ograniczonymi do $\vset{U}$ stanowi przestrzeń wektorową.
+\end{mydef}
+
+\begin{tw}
+   (Kryterium podprzestrzeni). Jeśli dla każdych $\vec{x}, \vec{y} \in \vset{U} \subset \vset{V}$ i $\alpha \in \real$ jest:
+   \[\vec{x} + \vec{y} \in \vset{U},\]
+   \[\alpha \vec{x} \in \vset{U},\]
+   to $\vset{U}$ jest podprzestrzenią (liniową) przestrzeni $\vset{V}$.
+\end{tw}
+
+\begin{mydef}
+   Niech $\{\vec{v}_1, \cdots, \vec{v}_m\} \subset \vset{V}$ dowolny skończony podzbiór wektorów przestrzeni $\vset{V}$ i niech $(\vec{v}_i)\ozn (\vec{v}_i, \cdots, \vec{v}_m)$.
+   Wektor
+   \[\vec{x} = \xi_i \vec{v}_i,\]
+   dla $(\xi_i) = (\xi_i, \cdots, \xi_m) \in \real^m$ nosi nazwę \underline{kombinacji liniowej} ciągu $(\vec{v}_i)$.
+\end{mydef}
+
+\begin{example}
+   Niech
+   \[\vset{u} \ozn \lin (\vec{v}_i) \df \{\vec{x} = \xi_i \vec{v}_i; (\xi_i) \in \real^m\}\]
+   gdzie $\vec{v}_i$ dowolny ustalony podzbiór (ciąg, układ) $m$ wektorów przestrzeni wektorowej $\vset{V}$. Zbiór $\vset{U}$ (wszystkich kombinacji liniowych wektorów $(\vec{v}_1, \cdots, \vec{v}_m)$) jest podprzestrzenią liniową przestrzeni $\vset{V}$ (na mocy kryterium) -- tzw. \underline{przestrzenią generowaną} przez układ wektorów $(\vec{v}_1, \cdots, \vec{v}_m)$.
+\end{example}
+
+\begin{mydef}
+   Niech $\vset{U}'$ i $\vset{U}''$ podprzestrzenie liniowe $\vset{V}$. Zbiór
+   \[\vset{U} = \vset{U}' + \vset{U}'' = \{\vec{u} = \vec{u}' + \vec{u}''; \vec{u}' \in \vset{U}'; \vec{u}'' \in \vset{U}'' \},\]
+   nosi nazwę sumy podprzestrzeni $\vset{U}'$ i $\vset{U}''$.
+   Jest to podprzestrzeń $\vset{V}$. Jeśli ponadto $\vset{U}' \cap \vset{U}'' = \{\vec{0}\}$ to $\vset{U} \ozn \vset{U}' \oplus \vset{U}"$ jest tzw. \underline{sumą prostą} $\vset{U}'$ i $\vset{U}''$.
+\end{mydef}
+
+\subsection{Przestrzenie skończenie wymiarowe. Baza algebraiczna}
+
+\begin{mydef} 
+   Podzbiór ${\vec{e}_1, \cdots, \vec{e}_n} \ozn (\vec{e}_i) = (\vec{e}_i, \cdots, \vec{e}_n)$ przestrzeni wektorowej $\vset{V}$ nazywa się \underline{liniowo niezależnym}, jeżeli prawdziwa jest implikacja:
+   \[\alpha_i \vec{e}_i = \vec{0} \to \alpha_i = 0\;\; \forall i = 1,\cdots, n \dend\]
+\end{mydef}
+
+\begin{mydef}
+   Zbiór $\vset{B} = (\vec{e}_i)$ wektorów z przestrzeni $\vset{V}$ nazywamy \underline{bazą (algebraiczną)}, jeżeli:
+   \begin{enumerate}
+    \item $\vset{B}$ jest liniowo niezależnym
+	\item $\lin \vset{B} = \vset{V}$ ($\vset{B}$ generuje $\vset{V}$).
+   \end{enumerate}
+\end{mydef}
+
+\begin{mydef}
+   Jeżeli w przestrzeni $\vset{V}$ istnieje baza n-elementowa $\vset{B}$, to $\vset{V}$ nazywamy \underline{n-wymiarową} (\underline{skończenie wymiarową} o wymiarze $n$) i piszemy
+   \[\dim \vset{V} = n\]
+\end{mydef}
+
+\begin{info}
+   Jeżeli istnieje w $\vset{V}$ baza n-elementowa, to istnieje nieskończenie wiele baz i każda jest n-elementowa.
+\end{info}
+
+\begin{info}
+   Jeżeli $\vset{B}$ jest n-elementową bazą przestrzeni $\vset{V}$, to
+   \[\forall \vec{x} \in \vset{V} \exists (x^i) \in \real^n \;\; \vec{x} = x^i \vec{e}_i,\]
+   gdzie $(x^i)$ są tzw. \underline{współczynnikami rozkładu} lub \underline{współrzędnymi} wektorze $\vec{x}$ w bazie $\vset{B}$. Przy tym rozkład ten jest \underline{jednoznaczny}, bowiem
+   \[\vec{x} = x^i \vec{e}_i = y^i \vec{e}_i \to (x^i - y^i) \vec{e}_i = \vec{0} \to x^i - y^i = 0 \;\; \forall i = 1,2,\cdots, n \dend\]
+\end{info}
+
+\begin{example}
+    Bazą przestrzeni arytmetycznej $\real^n$ -- tzw. \underline{bazą standardową} - jest układ ciągów
+    \[\vec{e}_1 = (1, 0, 0, \cdots, 0),\]
+    \[\vec{e}_2 = (0, 1, 0, \cdots, 0),\]
+    \[\vdots\]
+    \[\vec{e}_n = (0, 0, 0, \cdots, 1)\]
+    czyli
+    \[\vec{e}_i = (\delta_{ij}) dla i=1,\cdots, n,\]
+    gdzie
+    \[\delta_{ij} \df CASES\]
+    jest tzw. \underline{symbolem Kroneckera}.
+\end{example}
+
+\begin{info}
+    Przestrzeń funkcyjna $F(\Omega, \vset{V})$ - nieskończenie wymiarowa.
+\end{info}
+
+\begin{info}
+    Jeżeli $(\vec{e}_1, \cdots, \vec{e}_m) \subset \vset{V}$ liniowo niezależny, to $\lin(\vec{e}_1, \cdots, \vec{e}_k) \oplus \lin(\vec{e}_{k+1}, \cdots, \vec{e}_m) = \lin(\vec{e}_1, \cdots, \vec{e}_m)$ oraz $\dim \lin (\vec{e}_1, \cdots, \vec{e}_m) = m$.
+\end{info}
+
+
+\begin{info}
+    Niech $(\vec{e}_i$ i $(\vec{e'}_{i}) \ozn (\vec{e}_{i'}) (i,i'=1,\cdots,n)$ dwie bazy przestrzeni n-wymiarowej $\vset{V}$. Zatem
+    \[\vec{e}_{i'} \ A_{i'}^i \vec{e}_i, \;\; \vec{e}_{i} \ A_{i}^{i'} \vec{e}_{i'},\]
+    a w konsekwencji
+    \[\vec{e}_{i'} = A_{i'}^i \vec{e}_i = A_{i'}^i A_{i}^{j'} \vec{e}_{j'},\]
+    skąd
+    \[A_{i'}^i A_{i}^{j'} = \delta^{i'}_{j'} = CASES,\]
+    czyli
+    \[[A^{i}_{i'}][A^{j'}_{i}]=[\delta_{i'}^{j'}],\]
+    lub
+    \[\mat{A}\mat{A}' = \mat{I}\;\; (\mat{A}' = \mat{A}^{-1}),\]
+    w notacji macierzowej, przy
+    \[\mat{A} = [A^i_{i'}], \;\;  \mat{A}' = [A^{i'}_{i}],\]
+    tzw \underline{macierzach transformacji baz} (z $\vec{e}_i$ do $\vec{e}_{i'}$ i na odwrót).
+\end{info}
+
+Jeżeli $\det \mat{A} > 0$, to bazy $(\vec{e}_{i})$ i $(\vec{e}_{i'})$ są \underline{zgodnie zorientowane}.
+
+Niech 
+\[\vec{x} = x^i \vec{e}_i = x^{i'} \vec{e}_{i'} \dend\]
+Wobec
+\[x^{i'} \vec{e}_{i'} = x^{i'} A_{i'}^i \vec{e}_i = x^i \vec{e}_i = x^i A^{i'}_i\vec{e}_{i'},\]
+mamy
+\[x^{i'} = A_i^{i'} x^i, \;\; x^{i} = A_{i'}^{i} x^{i'},\]
+czyli w notacji macierzowej
+\[[x^{i'}] = [A_i^{i'}][x^i], \;\; [x^i]=[x_{i'}^i][x^{i'}]\]
+
+\begin{info}
+   Niech $\vset{B} = (\vec{e}_i)$ ustalona baza przestrzeni $\vset{V}$.
+   Odwzorowanie
+   \[\vset{i}_{\vset{B}} : \vset{V} \to \real^n; \; \vset{i}_{\vset{B}}(\vec{x}) = (x^i), \; \vec{x} = x^i \vec{e}_i,\]
+   ustala tzw. \underline{izomorfizm} $\vset{V}$ i $\real^n$ w danej bazie $\vset{B}$.
+\end{info}
+
+
+\subsection{Przestrzenie unormowane}
+
+\begin{mydef}
+   Przestrzenią (liniową, wektorową) \underline{unormowaną} nazywamy parę (układ) $\{\vset{V}, |\cdot|\}$, gdzie $\vset{V}$ jest przestrzenią wektorową, a $|\cdot|$ -- odwzorowaniem, zwanym \underline{normą}, o następujących własnościach:
+   \[|\cdot|: \vset{V} \to <p, \infty) \subset \real,\]
+   \begin{enumerate}
+    \item $|\vec{x}| = 0 \wtw \vec{x} = \vec{0}$,
+    \item $|\alpha \vec{x}| = |\alpha|\,|\vec{x}| \;\; \forall \alpha \in \real, \forall \vec{x} \in \vset{V}$,
+    \item $|\vec{x} + \vec{y}| \leq |\vec{x}| + |\vec{y}| \;\; \forall \vec{x}, \vec{y} \in \vset{V}$.
+   \end{enumerate}
+   Liczba $|\vec{x}|$ -- \underline{norma} lub \underline{długość} wektora $\vec{x}$.
+\end{mydef}
+
+\begin{info}
+   \underline{Wektor jednostkowy} (inaczej wersor) -- wektor o długości jednostkowej ($\vec{i} \text{ - wersor} \wtw |\vec{i}| = 1$).
+\end{info}
+
+\begin{example}
+   Przestrzeń wektorowa arytmetyczna $\real^n$ jest unormowana -- z normą:
+   \[|\vec{x}| = \df \sum\limits_{i=1}^{n} |x_i|, \;\; \vec{x} = (x_i)\dend\]
+\end{example}
+
+\begin{example}
+   Niech $\vset{V}$ przestrzeń unormowana z normą $|\cdot|$. Zbiór
+   \[L^\infty(\Omega, \vset{V}) = \{\vec{f} \in F(\Omega, \vset{V}); \sup \limits_{\xi \in \Omega} |\vec{f}(\xi)| < \infty\},\]
+   jest podprzestrzenią liniową przestrzeni $F(\Omega, \vset{V})$, co wynika z kryterium podprzestrzeni, a więc jest przestrzenią wektorową - tzw. \underline{przestrzenią funkcji ograniczonych}.
+   Ponadto przestrzeń ta jest unormowana, gdyż 
+   \[|| \vec{f} ||_\infty \df \sup \limits_{\xi\in\Omega} |\vec{f}(\xi)|,\]
+   spełnia warunki definicyjne normy.
+\end{example}
+
+\begin{info} 
+   Jeżeli $\vset{V}$ jest skończenie wymiarowa, to każde dwie normy na $\vset{V}$ są \underline{równoważne}, tzn. 
+   \[\exists \alpha, \beta > 0 \;\; \alpha |\vec{x}|_1 \leq |\vec{x}|_2 \leq |\vec{x}|_1 \;\; \forall \vec{x} \in \vset{V}\dend\]
+\end{info}
+
+\begin{info}
+   Jeżeli $\vset{U}$ jest podprzestrzenią liniową przestrzeni unormowanej $\vset{V}$ z normą $|\cdot|$, to $\vset{U}$ jest również \underline{unormowana} -- z normą $|\cdot|$ obciętą do $\vset{U}$.
+\end{info}
+
+
+
+\begin{tw}
+   Przestrzeń wektorowa unormowana $\{ \vset{V}, |\cdot|\}$ jest ``automatycznie'' metryczna -- z metryką \underline{generowaną} przez normę:
+   \[d(\vec{x}, \vec{y}) \df |\vec{y} - \vec{x}|, \;\; \forall \vec{x}, \vec{y} \in \vset{V},\]
+   (jeśli wektory przestrzeni $\vset{V}$ potraktować także jako punkty przestrzeni $D = \vset{V}$).
+\end{tw} 
+
+\begin{mydef}
+   Jeżeli przestrzeń unormowana $\vset{V}$ jest jako przestrzeń metryczna (z metryką generowaną przez normę) zupełna, to nazywa się \underline{przestrzenią Banacha}.
+\end{mydef}
+
+\begin{info}
+   Każda skończenie wymiarowa i unormowana przestrzeń wektorowa jest przestrzenią Banacha (w tym $\real^n$).
+\end{info}
+
+\begin{info}
+   Każda skończenie wymiarowa podprzestrzeń przestrzeni unormowanej jest domknięta.
+\end{info}
+
+\begin{info}
+   Żadna nieskończenie wymiarowa przestrzeń Banacha $\vset{V}$ nie daje się przedstawić w postaci sumy $\vset{V}_1 \cup \vset{V}_2 \cup \cdots$ skończenie wymiarowych podprzestrzeni $\vset{V}$.
+\end{info}
+
+\begin{example}
+   Niech $K$ podzbiór zwarty przestrzeni $\real^n$ i niech $C(K, \real^m)$ przestrzeń funkcji ciągłych (jako podprzestrzeń przestrzeni $F(K; \real^m)$). Przestrzeń ta jest przestrzenią Banacha z normą:
+   \[||f|| = \sup\limits_{x \in K} |f(x)|,\]
+   gdzie $|f(x)|$ -- dowolna norma w $\real^n$.
+\end{example}
+
+\begin{example}
+   Niech $U$ oznacza podzbiór otwarty i mierzalny (w sensie Lebesgue'a) w $\real^n$ i niech $L(U; \real)$ oznacza zbiór wszystkich funkcji całkowalnych (w sensie Lebesgue'a) na $U$  o wartościach w $\real$. $L(U,\real)$ jest podprzestrzenią liniową przestrzeni funkcyjnej $F(U, \real)$, a ponadto przestrzenią Banacha z normą
+   \[|f| = \int\limits_U |f(x)| dV,\]
+   gdzie $dV$ -- miara w $U \subset \real^n$, $d V = dx_1 \cdot 
+   ... \cdot dx_n$ przy $x = (x_1, ..., x_n)$.
+\end{example}
+
+\begin{mydef}
+   Niech $(\vset{V}_n) = \{\vset{V}_n \subset \vset{V}; n \in \nat\}$ \underline{ciąg} podprzestrzeni liniowych przestrzeni unormowanej (Banacha) $\subset{V}$.
+   Mówimy, że ciąg $(\vset{V}_n)$ \underline{aproksymuje} przestrzeń $\vset{V}$, jeżeli
+   \[\forall \varepsilon > 0 \; \forall \vec{x} \in \vset{V} \; \exists N \in \nat \; \exists \vec{x}_N \in \vset{V}_N \; |\vec{x}-\vec{x}_N| < \varepsilon\]
+   oraz, że ciąg $(\vset{V}_n)$ aproksymuje przestrzeń $\vset{V}$ \underline{jednostajnie}, jeżeli
+
+   \[\forall \varepsilon > 0 \; \exists N \in \nat \; \forall \vec{x} \in \vset{V} \; \exists \vec{x}_N \in \vset{V}_N \; |\vec{x} - \vec{x}_N| < \varepsilon\].
+\end{mydef}
+
+
+\subsection{Przestrzenie unitarne}
+
+\begin{mydef}
+   \underline{Przestrzenią} (liniową) \underline{unitarną} (\underline{przestrzenią z iloczynem skalarnym}) nazywamy parę $\{\vset{V}; <\cdot, \cdot>\}$, gdzie $\vset{V}$ jest przestrzenią wektorową (liniową), a $<\cdot, \cdot>$ odwzorowaniem
+   
+   \[<\cdot, \cdot>: \vset{V} \times \vset{V} \to \real \; (<\vec{x}, \vec{y}> \ozn \vec{x} \cdot \vec{y}),\]
+   zwanym \underline{iloczynem skalarnym} (produktem skalarnym), spełniającym warunki:
+   
+   \begin{enumerate}
+    \item $\vec{x} \cdot \vec{x} \geq 0, \; \vec{x} \cdot \vec{x} = 0 \wtw \vec{x} = \vec{0}$,
+    \item $\vec{x} \cdot \vec{y} = \vec{y} \cdot \vec{x}$,
+    \item $(\alpha \vec{x}' + \beta \vec{x}'') \cdot \vec{y} = \alpha \vec{x}' \cdot \vec{y} + \beta \vec{x}'' \cdot \vec{y}$.
+   \end{enumerate}
+
+\end{mydef}
+

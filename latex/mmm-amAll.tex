@@ -1,0 +1,91 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{polski}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{tensor}
+\usepackage{titlesec}
+
+\title{}
+\author{}
+\date{}
+
+\pdfinfo{%
+  /Title    ()
+  /Author   ()
+  /Creator  ()
+  /Producer ()
+  /Subject  ()
+  /Keywords ()
+}
+
+\newtheorem{mydef}{Definicja}
+\newtheorem{example}{Przykład}
+\newtheorem{tw}{Twierdzenie}
+
+\newcommand\subsectionbreak{\ifnum\value{subsection}>1\clearpage\fi}
+
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+\newcommand{\set}[1]{\mathbf{#1}}
+\newcommand{\vset}[1]{\vec{\set{#1}}}
+\newcommand{\mat}[1]{\mathbb{#1}}
+\newcommand{\real}{\mathscr{R}}
+\newcommand{\nat}{\mathscr{N}}
+\newcommand{\p}[1]{\ensuremath{\,\textnormal{#1}}}
+\newcommand{\clos}{\ensuremath{\,\textnormal{clos}}}
+\newcommand{\inter}{\ensuremath{\,\textnormal{int}}}
+\newcommand{\dend}{\mbox{\large\bfseries .}}
+\newcommand{\df}{\stackrel{\mathclap{\normalfont\mbox{df}}}{=}}
+\newcommand{\ozn}{\stackrel{\mathclap{\normalfont\mbox{ozn}}}{=}}
+\newcommand{\lin}{\normalfont\mbox{lin}}
+\newcommand{\wtw}{\Leftrightarrow}
+
+\usepackage{xcolor,mdframed}
+
+\newenvironment{important}[1][]{%
+   \begin{mdframed}[%
+      backgroundcolor={red!15}, hidealllines=true,
+      skipabove=0.7\baselineskip, skipbelow=0.7\baselineskip,
+      splitbottomskip=2pt, splittopskip=4pt, #1]%
+   \makebox[0pt]{% ignore the withd of !
+      \smash{% ignor the height of !
+         \fontsize{32pt}{32pt}\selectfont% make the ! bigger
+         \hspace*{-19pt}% move ! to the left
+         \raisebox{-2pt}{% move ! up a little
+            {\color{red!70!black}\sffamily\bfseries !}% type the bold red !
+         }%
+      }%
+   }%
+}{\end{mdframed}}
+
+\newenvironment{info}[1][]{%
+   \begin{mdframed}[%
+      hidealllines=true, #1]%
+   \makebox[0pt]{% ignore the withd of !
+      \smash{% ignor the height of !
+         \hspace*{-19pt}% move ! to the left
+         \raisebox{1pt}{% move ! up a little
+            {\sffamily\bfseries !}% type the bold red !
+         }%
+      }%
+   }%
+}{\end{mdframed}}
+
+\begin{document}
+\tableofcontents
+
+\maketitle
+\input{mmm-am1.tex}
+\input{mmm-am2.tex}
+
+
+
+
+\end{document} 

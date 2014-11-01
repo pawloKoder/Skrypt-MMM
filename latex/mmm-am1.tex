@@ -1,0 +1,235 @@
+
+\section{Przestrzenie metryczne}
+
+\subsection{Pojęcie przestrzeni metrycznej}
+
+\begin{mydef}
+    Przestrzenią metryczną nazywamy układ $\{\mat{D}; d\}$, w którym $\mat{D}$ jest niepustym zbiorem elementów $\p{X}$, $\p{Y}$, $\p{Z}$, zwanych \textbf{punktami}, natomiast $d: \mat{D}~\times~\mat{D} \to \real$ ($\real$ -- zbiór (ciało) liczb rzeczywistych) jest odwzorowaniem, zwanym \textbf{metryką}, spełniających warunki:
+    \begin{enumerate}
+     \item $d(\p{X},\p{Y}) \geq 0, d(\p{X},\p{Y})=0 \Leftrightarrow \p{X} = \p{Y}$,
+     \item $d(\p{X},\p{Y}) = d(\p{Y},\p{X})$,
+     \item $d(\p{X},\p{Y}) \leq d(\p{X},\p{Z}) + d(\p{Z},\p{Y})$,
+    \end{enumerate}
+    dla dowolnych $\p{X}, \p{Y}, \p{Z} \in \mat{D}$. Liczbę $d(\p{X},\p{Y})$ nazywamy odległością punktu \p{X} od \p{Y}). Jeżeli $\mat{B} \subset \mat{D} \;d' = d|_{\mat{B} \times \mat{B}}$, to $\{\mat{B}, d'\}$ nazywamy \textbf{podzbiorem metrycznym} (\underline{podprzestrzenią metryczną}) przestrzeni $\mat{D}$.
+\end{mydef}
+
+\begin{info}
+    Mówimy krótko: \textbf{przestrzeń} (metryczna) $\mat{D}$ - chociaż na danym zbiorze może być określonych wiele różnych metryk. Metryki $d$ i $d'$ są \textbf{równoważne} (z definicji), jeśli
+    \[\exists \alpha,\beta \in \real \;\;\; \alpha d(\p{X},\p{Y}) \leq d'(\p{X},\p{Y}) \leq \beta d(\p{X},\p{Y}) \;\;\; \forall \p{X},\p{Y}\in\mat{D}\dend\]
+\end{info}
+
+\begin{example}
+    Niech $\real^n = \{\p{X}\df (x_1, ..., x_n); x_i\in\real \;\text{dla}\; i=1,...,n\}$ i $\mat{D} = \real^n$ (zbiór ciągów $n$-elementowych). Niech
+    \[d(\p{X},\p{Y}) = \left[\sum^{n}_{i=1}(y_i-x_i)^2\right]^\frac{1}{2},\]
+    \[d'(\p{X},\p{Y}) = \sum^n_{i=1}|y_i-x_i|,\]
+    \[d''(\p{X},\p{Y}) = \max_{i=1,...,n}|y_i-x_i|\dend\]
+    Odwzorowania $d$, $d'$ i $d''$ są metrykami na $\real^n$ (i to równoważnymi). Zwykle $\real^n \equiv \{\real^n, d\}$ nazywamy \underline{arytmetyczną przestrzenią metryczną} (z metryką \underline{euklidesową}). 
+\end{example}
+
+\begin{example}
+    Niech $\Omega$ dowolny zbiór elementów $\xi$, $\eta$, $\zeta$,... i niech $f:\Omega \to \real$ dowolne odwzorowanie ograniczone (tzn. $\sup\limits_{\eta \in \real}|f(\eta)| < \infty$). Zbiór \[F(\Omega, \real)=\{f:\Omega\to\real; \sup\limits_\Omega|f(\eta)|<\infty\}\]
+    wraz z odwzorowaniem
+    \[d(f,g) = \sup_\Omega|f(\eta)-g(\eta)|\]
+    jest przestrzenią metryczną (tzw. \underline{funkcyjną}) - tzn. $\{\mat{D}, d\}$ przy $\mat{D} = F(\Omega, \real)$ (punktami przestrzeni $\mat{D}$ są tu funkcje ze zbioru F). 
+\end{example}
+
+\begin{example}
+    Niech $\{\mat{D}_1, d_1\}, ..., \{\mat{D}_n, d_n\}$ - przestrzenie metryczne. Wtedy $\{\mat{D}, d\}$, przy
+    \[\mat{D} \df \mat{D}_1 \times ... \times \mat{D}_n \ni \p{X} \times \p{Y} = (\p{X}_1, ..., \p{X}_n) \times (\p{Y}_1, ..., \p{Y}_n) \to d(\p{X}, \p{Y}) = \sum^n_{i=1} d_i(\p{X}_i, \p{Y}_i)\]
+    jest przestrzenią metryczną.
+\end{example}
+
+\subsection{Podstawowe, wybrane pojęcia topologiczne}
+
+    Niech $\mat{D}$ przestrzeń metryczna z ustaloną metryką $d$.
+    
+\begin{mydef}
+    \underline{Odległość} między zbiorami $\mat{A}, \mat{B} \subset \mat{D}$:
+    \[d(\mat{A}, \mat{B}) = \inf d(\p{X},\p{Y}), \p{X} \in \mat{A}, \p{Y} \in \mat{B}\].
+\end{mydef}
+
+\begin{mydef}
+    Zbiór $\mat{Z}$ ($\mat{Z}\subset \mat{D}$) jest \underline{ograniczony} jeśli:
+    \[\sup d(\p{X},\p{Y}) < \infty \;\; \p{X},\p{Y}\in\mat{Z}\].
+\end{mydef}
+
+\begin{mydef}
+    \underline{Średnicą} zbioru ograniczonego nazywamy:
+    \[\rho (\mat{\p{Z}}) \df \sup\limits_{\p{X},\p{Y} \in \mat{\p{Z}}} d(\p{X},\p{Y})\].
+\end{mydef}
+
+\begin{mydef}
+    Ciąg $\{\p{X}_n\}$ punktów z $\mat{D}$ jest \underline{zbieżny} do $\p{X}$ (ma \underline{granicę} $\p{X} \in \mat{D}$):
+    \[ \lim_{n \to \infty} \p{X}_n = \p{X} \Leftrightarrow \lim_{n\to \infty} d(\p{X}_n, \p{X}) = 0.\]
+\end{mydef}
+
+\begin{mydef}
+    \underline{Domknięcie zbioru} $\set{\p{Z}}$ $(\set{\p{Z}} \subset \set{D})$:
+    \[\bar{\set{\p{Z}}} \ozn \clos(\set{\p{Z}}) \df \{\p{X}' \in \set{Z}; \p{X}'=\lim_{n\to\infty}\p{X}_n, \p{X}_n \in \set{D} \;\text{dla}\; n=1,2,\dots\}.\]
+\end{mydef}
+
+\begin{info}
+    \[\set{\p{Z}} \subset \bar{\set{\p{Z}}}\]
+\end{info}
+
+\begin{mydef}
+    Zbiór $\set{A}$ \underline{gęsty} w zbiorze $\mat{B}(\set{A}\subset\set{B}\subset\set{D})$, jeśli $\set{B} \subset \bar{\set{A}}.$
+\end{mydef}
+
+\begin{mydef}
+    Zbiór $\set{\p{Z}}$ jest \underline{domknięty} jeśli $\set{\p{Z}} = \bar{\set{\p{Z}}}.$
+\end{mydef}
+
+\begin{mydef}
+    \underline{Kula} (otwarta) o środku $\p{C}'$ i promieniu $r$:
+    \[\set{K}(\p{C}', r) = \{\p{X}\in \set{D}; d(\p{X}, \p{C}') < r\}\]
+\end{mydef}
+
+\begin{mydef}
+    \underline{Kula domknięta} o środku $C'$ i promieniu $r$ -- domknięcie kuli: \[\set{K}(C', r) = \{\p{X} \in \set{D}; d(\p{X}, C') \leq r\}\]
+\end{mydef}
+
+\begin{mydef}
+    \underline{Sfera} o środku $C'$ i promieniu $r$:
+    \[\set{S}(C', r) = \{\p{X}\in\set{D};\; d(\p{X}, C') = r\}\]
+\end{mydef}
+
+\begin{mydef}
+    Punkt $\p{X}$ zbioru $\set{\p{Z}}$ jest \underline{wewnętrzny} jeśli
+    \[\exists r > 0\; \set{K}(\p{X}, r) \subset \set{\p{Z}}.\]
+\end{mydef}
+
+\begin{mydef}
+    \underline{Wnętrze} zbioru $\set{\p{Z}}$: $\inter (\set{\p{Z}})$ = zbiór punktów wewnętrznych zbioru $\set{\p{Z}}$.
+\end{mydef}
+
+\begin{mydef}
+    \underline{Brzeg} zbioru $\set{\p{Z}}$:
+    \[\partial \set{\p{Z}} = \clos(\set{\p{Z}}) - \inter(\set{\p{Z}}).\]
+\end{mydef}
+
+\begin{mydef}
+    Punkt \underline{brzegowy} zbioru $\set{\p{Z}}$ -- punkt należący do brzegu $\partial \set{\p{Z}}$.
+\end{mydef}
+
+\begin{mydef}
+    Zbiór $\set{\p{Z}}$ \underline{otwarty} jeśli $\set{\p{Z}} = \inter(\set{\p{Z}})$
+\end{mydef}
+
+\begin{info}
+     Kula (otwarta) jest zbiorem otwartym, kula domknięta i sfera są zbiorami domkniętymi. Sfera jest brzegiem kuli otwartej i domkniętej.
+\end{info}
+\begin{info}
+     \textbf{Iloczyn dowolnie wielu} zbiorów domkniętych oraz \textbf{suma skończenie wielu} zbiorów domkniętych są zbiorami domkniętymi.
+\end{info}
+\begin{info}
+     Suma dowolnie wielu zbiorów otwartych oraz iloczyn skończenie wielu zbiorów otwartych są zbiorami otwartymi.
+\end{info}
+
+\begin{mydef}
+     \underline{Dopełnienie} zbioru $\set{\p{Z}}$:
+     \[\set{\p{Z}'} = \set{D} - \set{\p{Z}}.\]
+\end{mydef}
+
+\begin{info}
+     Dopełnieni zbioru domkniętego jest zbiorem otwartym, a otwartego - domkniętym.
+\end{info}
+\begin{info}
+     $\set{D}' = \emptyset$(zbiór pusty), $\emptyset' = \set{D}.$
+\end{info}
+
+\begin{mydef}
+     Zbiór $\set{\p{Z}}$ jest \underline{otoczeniem} punktu $\p{X}$ jeśli $\p{X}\in \inter\set{\p{Z}}.$
+\end{mydef}
+\begin{mydef}
+     Jeśli $\set{\p{Z}}$ \underline{otoczenie} $\p{X}$, to $\set{\p{Z}} - \{\p{X}\}$ \underline{sąsiedztwo} $\p{X}$. 
+\end{mydef}
+
+\begin{mydef}
+     Punkt $\p{X}$ zbioru $\set{\p{Z}}$ jest \underline{izolowany} wtw, $\exists r>0\; \set{K}(\p{X}, r) \cap \set{\p{Z}} = \{\p{X}\}.$
+\end{mydef}
+
+\begin{mydef}
+     Zbiór złożony jedynie z punktów izolowanych - zbiór \underline{dyskretny}.
+\end{mydef}
+
+\begin{mydef}
+     Zbiór $\set{\p{Z}}$ \underline{skończony} (\underline{policzalny}) - wszystkie elementy można \underline{policzyć}:\\
+     Zbiór $\set{\p{Z}}$ \underline{$n$-elementowy} (skończony), jeżeli jest postaci:
+     \[\set{\p{Z}} = \{\p{X}_1, \p{X}_2, \dots, \p{X}_n\}.\]
+\end{mydef}
+
+\begin{mydef}
+     Zbiór $\set{\p{Z}}$ \underline{przeliczalny} - wszystkie elementy można ponumerować, tj. ustawić w ciąg:
+     \[\set{\p{Z}} = \{\p{X}_1, \dots, \p{X}_i, \dots\}.\]
+\end{mydef}
+
+\begin{mydef}
+     Zbiór $\set{\p{Z}}$ \underline{spójny}, jeżeli
+     \[\set{\p{Z}} = \set{A} \cup \set{B} \Rightarrow \bar{\set{A}} \cap \set{B} \neq \emptyset \vee \set{A} \cap \bar{\set{B}} \neq \emptyset.\]
+\end{mydef}
+
+\begin{mydef}
+    Zbiór otwarty i spójny - \underline{obszar}.
+\end{mydef}
+
+\begin{mydef}
+    Domknięcie obszaru - \underline{obszar domknięty}.
+\end{mydef}
+
+\begin{mydef}
+    Obszar domknięty ograniczony - \underline{bryła}. 
+\end{mydef}
+
+\begin{mydef}
+    Zbiór $\set{\p{Z}}$ \underline{zwarty} = każdy ciąg punktów zbioru zbioru $\set{\p{Z}}$ zawiera podciąg zbieżny do pewnego punktu zbioru $\set{\p{Z}}$:
+    \[\{\p{X}_1,\dots,\p{X}_n,\dots\} \subset \set{\p{Z}} \;\;\text{i}\;\; \rho(\{\p{X}_1, \dots, \p{X}_n, \dots\}) < \infty \]
+    \[\Rightarrow \exists\{n_k\} \subset \nat (\text{zbiór liczby naturalnych}) \;\text{i}\; \exists \p{X} \in \set{\p{Z}} \;\;\text{lim}_{k\to\infty}\p{X}_{n_k} = \p{X}\]
+\end{mydef}
+
+\begin{info}
+    Jeśli $\set{\p{Z}}$ zwarty, to domknięty i ograniczony.
+\end{info}
+
+\begin{mydef}
+    Zbiór $\set{\p{Z}}$ \underline{wypukły}, jeżeli $\forall \p{X},\p{Y} \in \set{\p{Z}}$ odcinek $\bar{\p{X}\p{Y}} \subset \set{\p{Z}}.$
+\end{mydef}
+
+\begin{mydef}
+    \underline{Odcinek} o końcach $\p{X}$ i $\p{X}$ w przestrzeni $\set{D}$:
+    \[\overline{\p{X}\p{Y}} \df \{\p{Z}\in\set{D}; d(\p{X},\p{Y}) + d(\p{Z},\p{Y}) = d(\p{X},\p{Y}) \}.\]
+\end{mydef}
+
+
+\subsection{Przestrzenie metryczne ośrodkowe i zupełne}
+
+\begin{mydef}
+    Niech $\{\set{D}, d\}$, przestrzeń metryczna. Przestrzeń $\set{D}$ jest \underline{ośrodkowa}, jeżeli istnieje zbiór $\set{B}$ (skończony lub przeliczalny) gęsty w $\set{D}$ (tzn. $\set{B} = \set{D}$).
+\end{mydef}
+
+\begin{info}
+    Dowolny podzbiór $\set{\p{Z}}$ przestrzeni ośrodkowej $\{\set{D}, d\}$ jest przestrzenią ośrodkową $\{\set{\p{Z}}, d'\}, d'=d_{\set{\p{Z}} \times \set{\p{Z}}}$.
+\end{info}
+
+\begin{info}
+    Produkt kartezjański przestrzeni metrycznych $\set{D}_1 \times \dots \times \set{D}_n$ jest przestrzenią ośrodkową jeśli wszystkie $\set{D}_i$ są ośrodkowe (por. Przykład 3. z p. 1.1).
+\end{info}
+
+\begin{mydef}
+    Przestrzeń metryczna $\set{D}$ (z metryką d) jest \underline{zupełna}, jeżeli każdy ciąg $\{\p{X}_n\}$ elementów z $\set{D}$ spełniający \textbf{warunek Cauchy}'ego:
+    \[\forall \varepsilon>0 \;\exists N \in \nat \;\forall m \geq n \geq N \;\; d(\p{X}_m, \p{X}_n) < \varepsilon\]
+    jest zbieżny do pewnego punktu $\p{X} \in \set{D}$ (tzn. $\p{X}_n \to \p{X}, \; lim_{n->\infty} \p{X}_n = \p{X}$).
+\end{mydef}
+
+\begin{info}
+   Każdy ciąg zbieżny spełnia warunek Cauchy.
+\end{info}
+\begin{info}
+   Zbiór $\real$ jako przestrzeń metryczna jest zupełny.
+\end{info}
+\begin{info}
+   Podzbiór $\set{\p{Z}}$ przestrzeni zupełniej $\set{D}$ jest zupełny (przestrzenią zupełną jako podprzestrzeń) wtedy, gdy $\set{\p{Z}}$ jest \underline{domknięty}.
+\end{info}
+\begin{info}
+   Produkt kartezjański przestrzeni metrycznych $\set{D}_1 \times \dots \times \set{D}_n$ jest przestrzenią zupełną wtedy, gdy wszystkie $\set{D}_i$ są zupełne (por Przykład 3 z p. 1.1).
+\end{info}
