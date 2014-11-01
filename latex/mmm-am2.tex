@@ -377,3 +377,79 @@ czyli w notacji macierzowej
    (z oznaczeniami $l^2$, $<\cdot, \cdot>$ i $|\cdot|$ przy ``braku wagi'').
    W przypadku, gdy $\set{I} = \{1,2,3,..,n\}$ przestrzeń $l^2$ pokrywa się z $\real^n$ ze standardowym iloczynem skalarnym i normą.
 \end{example}
+
+Następujące twierdzenia są poprawne w odniesieniu do przestrzeni unitarnej:
+\begin{tw}
+   (Pitagorasa) Jeżeli wektory $\vec{x}$ i $\vec{y}$ są prostopadłe ($\vec{x} \perp \vec{y}$), to 
+   \[|\vec{x}+\vec{y}|^2 = |\vec{x}|^2 + |\vec{y}|^2 \dend\]
+\end{tw}
+
+\begin{tw} 
+   Niech $\vset{U}$ podzbiór przestrzeni unitarnej $\vset{V}$. Zbiór $\vset{U}^{\perp} = \{\vec{y} \in \vset{V}; \; \{\vec{y}\} \perp \vset{U}\}$, zwany \underline{dopełnieniem ortogonalnym $\vset{U}$}, jest podprzestrzenią liniową $\vset{V}$.
+   
+   Jeśli ponadto $\vset{U}$, jest skończenie wymiarową podprzestrzenią $\vset{V}$, to $\vset{V} = \vset{U} \oplus \vset{U}^\perp$.
+\end{tw}
+
+\begin{tw}
+   (o rzucie ortogonalnym) Niech $\vset{V}$ przestrzeń unitarna, a $\vset{U}$ jej skończenie wymiarowa podprzestrzeń liniowa, Wtedy
+   \[\forall \vec{x} \in \vset{V} \; \exists \vec{a} \in \vset{U} \vec{x} = \vec{a} + \vec{y}, \; \{\vec{y}\} \perp \vset{U} \dend\]
+   
+   Wektor $\vec{a} \ozn \rzut_{\vset{U}}\vec{x}$ nosi nazwę \underline{rzutu ortogonalnego} $\vec{x}$ na $\vset{U}$.
+\end{tw}
+
+\begin{tw}
+   Zbiór $(\vec{e}_1, ..., \vec{e}_m)$ jest liniowo niezależny w $\{\vset{V}; <\cdot, \cdot>\}$ wtw. $G = det[\vec{e}_i \cdot \vec{e}_j] \neq 0$ ($G$ -- tzw wyznacznik Grama).
+\end{tw}
+
+\begin{mydef} 
+   Przestrzeń unitarna $\vset{V}$ nazywa się \underline{przestrzenią Hilberta}, jeżeli $\vset{V}$ jako przestrzeń metryczna (z metryką generowaną przez normę generowaną przez iloczyn skalarny) jest \underline{zupełna}.
+\end{mydef}
+
+\begin{info}
+   Przestrzeń Hilberta jest Banacha z norma generowaną przez iloczyn skalarny, a przestrzeń unitarna będąca przestrzenią Banacha (jako przestrzeń unormowana jest przestrzenią Hilberta.
+\end{info}
+
+\begin{tw}
+   (o rzucie ortogonalnym - c.d.) Niech $\vset{V}$ przestrzeń Hilberta, a 
+   $\vset{Z}$ jej podzbiór wypukły i domknięty. Wtedy
+   \[\forall \vec{x} \in \vset{V} \; \exists \vec{a} \in \vset{Z} \; |\vec{x} - \vec{a}| = \inf |\vec{x} - \vec{z}| \; \vec{z} \in \vset{Z},\]
+   a przy czym $\vec{a} \ozn \rzut_{\vset{Z}} \vec{x}$ jest określony jednoznacznie (stosujemy również oznaczenie:
+   \[ P_{\vset{Z}}: \vset{V} \to \vset{Z}, P_{\vset{Z}} \vec{x} = \rzut_{\vset{Z}} \vec{x} ).\]
+\end{tw}
+
+\begin{tw}
+   Podprzestrzeń liniowa $\vset{U}$ przestrzeni Hilberta $\vset{V}$ jest gęsta wtw. gdy jedynym elementem $\vec{x} \in \vset{V}$ ortogonalnym do $\vset{U}$ jest $\vec{x} = \vec{0}$.
+\end{tw}
+
+\begin{mydef}
+   Niech $(\vec{V}_n) = \{\vec{V}_n \subset \vec{V}; n \in \nat\}$ ciąg liniowych domkniętych podprzestrzeni Hilberta $\vec{V}$. Mówimy, że $\vec{V}$ jest \underline{sumą hilbertowską} podprzestrzeni $\vec{V}_n$, co oznaczamy przez $\vec{V} = \oplus_{n\in\nat} \vset{V}$, jeżeli
+   \begin{enumerate}
+    \item $\vset{V}_n$ są wzajemnie ortogonalne, tzn $\forall n\neq m \vset{V}_n \perp \vset{V}_m$
+    \item podprzestrzeń liniowa rozpięta przez $\vset{V}_n$ jest gęsta w $\vset{V}$, tzn.
+   \[\clos \left(\lin \bigcup\limits_{n \in \nat} \vset{V}_n\right) = \vset{V},
+   \]
+    czyli
+    \[\forall \vec{x} in \vset{V}\; \forall n \in \nat \; \exists \vec{x}_n \in \vset{V}_n \lim\limits_{N\to\infty} \sum\limits_{n=1}^N \vec{x}_n = \vec{x},\]
+    piszemy także
+    \[\lim\limits_{N\to\infty} \sum\limits_{n=1}^N \vec{x}_n \ozn \sum\limits_{n=1}^{\infty} \vec{x}_n \ozn \sum\limits_{n\in\nat}\vec{x}_n\]
+    i nazywamy tę granicę \underline{sumą nieskończoną} albo \underline{szeregiem} elementów $\vec{x}_n$ (ciągu $(\vec{x}_n)$ elementów z $\vset{V}_n$).
+   \end{enumerate}
+\end{mydef}
+
+\begin{info}
+   W powyższej definicji ciąg przestrzeni może być w szczególności ``skończony'', tzn $\exists n^* \in \nat \; n > n^* \; \vset{V}_n = \{\vec{0}\}$, a $\sum\limits_{n=1}^{\infty} \vec{x} = \sum\limits_{n=1}^{n^*} \vec{x}_n$.
+\end{info}
+
+\begin{tw}
+   Niech $\vset{V}$ będzie sumą hilbertowską podprzestrzeni $\vec{x}_n$. Wtedy, dla dowolnego $x \in \vset{V}$
+   \begin{enumerate}
+    \item $\vec{x} = \sum\limits_{n=1}^{\infty} \vec{x}_n$,
+    \item $|\vec{x}|^2 = \sum\limits_{n=1}^{\infty} |\vec{x}_n|^2$,
+   \end{enumerate}
+   gdzie 
+   \[\vec{x}_n = \rzut_{\vset{V}_n} \vec{x} = P_{\vset{V}_n} \vec{x} \;\; \forall n \in \nat \dend\]
+
+   Również na odwrót, dla każdego ciągu $(\vec{x}_n) = \{\vec{x}_n \in \vset{V}_n\}; \; n \in \nat$ takiego, że $\sum\limits_{n=1}^{\infty} |\vec{x}|^2 < \infty$, suma (szereg)
+   \[\vec{x} = \sum\limits_{n=1}^{\infty} \vec{x}_n,\]
+   istnieje (szereg jest zbieżny) i $\vec{x}_n = \rzut_{\vset{V}_n} \vec{x}\;\; \forall n \in \nat$ oraz prawdziwa jest równość 2).
+\end{tw}
