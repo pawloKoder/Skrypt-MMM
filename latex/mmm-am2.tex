@@ -453,3 +453,38 @@ Następujące twierdzenia są poprawne w odniesieniu do przestrzeni unitarnej:
    \[\vec{x} = \sum\limits_{n=1}^{\infty} \vec{x}_n,\]
    istnieje (szereg jest zbieżny) i $\vec{x}_n = \rzut_{\vset{V}_n} \vec{x}\;\; \forall n \in \nat$ oraz prawdziwa jest równość 2).
 \end{tw}
+
+\begin{mydef}
+   \underline{Bazą hilbertowską} nazywamy ciąg (skończony lub przeliczalny) elementów przestrzeni Hilberta $\vset{V}$ taki, że:
+   \begin{enumerate}
+    \item wektory $\vec{e}_n$ są \underline{ortonormalne}, tzn
+    \[|\vec{e}_n| = 1 \; \forall n \in \nat; \;\; \vec{e}_n\cdot \vec{e}_m = 0 \; \forall n,m \in \nat, n \neq m,\]
+    \[(\vec{e}_n \cdot \vec{e}_m = \delta_{n m}, \; \forall n,m \in \nat)\]
+    \item zbiór wszystkich kombinacji liniowych elementów ciągu $(\vec{e}_n)$ jest gęsty w $\vset{V}$, tj.
+    \[\forall \varepsilon > 0 \;\forall \vec{x} \in \vset{V}\; \exists N \in \nat \; \exists \vec{x}_N \in \lin (\vec{e}_1, ..., \vec{e_N}) \; |\vec{x} - \vec{x}_N| < \varepsilon \dend\]
+   \end{enumerate}
+\end{mydef}
+
+\begin{info}
+   O dowolnym ciągu $(\vec{e}_n)$ wektorów przestrzeni Hilberta spełniającym warunek 1) mówimy, ze jest \underline{układem ortonormalnym}, a w wypadku, gdy spełnia warunek 2), że generuje przestrzeń $\vset{V}$.
+\end{info}
+
+\begin{info}
+   Jeżeli $(\vec{e}_n)$ jest bazą hilbertowską, to przestrzenie (podprzestrzenie) $\vset{V}_n$ generowane przez poszczególne $(\vec{e}_n$ ($\vset{V}_n = \lin (\vec{e}_n); \; n=1,2,3,...$) są rodziną hilbertowską taką, że $\vset{V}$ jest \underline{sumą hilbertowską podprzestrzeni} $\vset{V}_n$ ($n \in \nat$). Przy tym przestrzenie (podprzestrzenie liniowe domknięte):
+   \[\vset{U}_n = \lin (\vec{e}_n) = \vset{V}_1 \oplus ...\oplus \vset{V}_n, \; n \in \nat,\]
+   tworzą ciąg aproksymacyjny $\vset{V}$.
+\end{info}
+
+\begin{mydef}
+   Niech $(\vec{e}_n)$ układ ortonormalny przestrzeni Hilberta $\vset{V}$. Mówimy, że:
+   \begin{enumerate}
+    \item układ $(\vec{e}_n)$ jest \underline{zupełny}, jeżeli żaden wektor (poza $\vec{0}$) nie jest ortogonalny do wszystkich wektorów $\vec{e}_n$ ($n \in \nat$);
+    \item układ $(\vec{e}_n)$ jest \underline{zamknięty}, jeżeli
+    \[\forall \vec{x} \in \vset{V} |\vec{x}|^2 = \sum\limits_{n=1}^{\infty} |\vec{x} \cdot \vec{e}_n|^2,\]
+    \item element $\vec{x}$ jest sumą swojego \underline{szeregu Fouriera}
+    \[\sum\limits_{n=1}^{\infty} (\vec{x} \cdot \vec{e}_n) \vec{e}_n = \lim\limits_{N\to \infty} \sum\limits_{n=1}^N (\vec{x} \cdot \vec{e}_n) \vec{e}_n,\]
+    tzn.
+    \[\vec{x} = \sum\limits^{\infty} (\vec{x} \cdot \vec{e}_n) \vec{e}_n \dend\]
+   \end{enumerate}
+
+\end{mydef}
