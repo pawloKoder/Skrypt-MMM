@@ -486,5 +486,50 @@ Następujące twierdzenia są poprawne w odniesieniu do przestrzeni unitarnej:
     tzn.
     \[\vec{x} = \sum\limits^{\infty} (\vec{x} \cdot \vec{e}_n) \vec{e}_n \dend\]
    \end{enumerate}
-
 \end{mydef}
+
+\begin{info}
+   Jeżeli $(\vec{e}_n)$ jest bazą hilbertowską przestrzeni $\vset{V}$, to każdy wektor $\vec{x} \in \vset{V}$ jest sumą swojego szeregu Fouriera względem układu zamkniętego i zupełnego $(\vec{e}_n)$. 
+\end{info}
+
+\begin{tw}
+   Niech $(\vec{e}_n)$ układ ortonormalny przestrzeni Hilberta $\vset{V}$. Wtedy następujące warunki są równoważne:
+   \begin{enumerate}
+    \item układ $(\vec{e}_n)$ jest zupełny,
+    \item ciąg $(\vec{e}_n)$ generuje $\vset{V}$,
+    \item układ $(\vec{e}_n)$ jest zamknięty,
+    \item każdy element $\vec{x} \in \vset{V}$ jest sumą swojego szeregu Fouriera.
+   \end{enumerate}
+\end{tw}
+
+\begin{tw}
+   W każdej ośrodkowej przestrzeni Hilberta istnieje baza hilbertowska.
+\end{tw}
+
+\begin{info}
+   Jeżeli przestrzeń Hilberta jest skończenie wymiarowa ( a każda przestrzeń unitarna skończenie wymiarowa jest ośrodkową przestrzenią Hilberta), to każda baza algebraiczna ortonormalna jest bazą hilbertowską (skończoną). W powyższych stwierdzeniach można formalnie przyjąć, że baza hilbertowska skończona jest przeliczalna po uzupełnieniu wektorami zerowymi ($(\vec{e}_n) = (\vec{e}_1, ..., \vec{e}_n, \vec{0}, \vec{0}, ...)$).
+\end{info}
+
+\begin{example}
+   Przestrzeń $\real^n$ z iloczynem skalarnym $\vec{x} \cdot \vec{y} = x_i y_i$ dla $\vec{x} = (x_i)$, $\vec{y} = (y_i)$ jest przestrzenią Hilberta ($n$ - wymiarową) jest bazą hilbertowską.
+\end{example}
+
+\begin{example}
+   Przestrzeń ciągów liczbowych $l^2$ jest ośrodkową przestrzenią Hilberta. Układ standardowy $\vec{e}_n = (\delta_{nm}) (m=1,2,...), \; n \in \nat$ jest bazą hilbertowską.
+   
+   Niech $\vset{V}$ będzie dowolną nieskończenie wymiarową przestrzenią Hilberta posiadającą bazę hilbertowską. $\vset{H} = (\vec{e}_n)$. Odwzorowanie
+   \[I_{\vset{H}}: \vset{V} \to l^2;\; \vec{x} = \sum\limits_{n=1}^{\infty} (\vec{x}\cdot \vec{e}_n) \vec{e}_n \to (\vec{x} \cdot \vec{e}_n) \in l^2\]
+   ustaka izomorfizm $\vset{V}$ i $l^2$.
+\end{example}
+
+\begin{example}
+   Przestrzeń unitarna $L^2(U, \real)$ jest zupełna, a więc Hilberta (podobnie $L^2_\rho(U, \real)$ przy pewnych warunkach). W obu przypadkach - po konkretyzacji $U$ -- można skonstruować bazy hilbertowskie.
+   
+   Na przykład, gdy $U = (0, 2 \pi)$, to układ
+   \[\left(\frac{1}{\sqrt{2\pi}}, \frac{1}{\sqrt{\pi}}\sin \xi, \frac{1}{\sqrt{\pi}} \cos \xi, ..., \frac{1}{\sqrt{\pi}} \sin n\xi, \frac{1}{\sqrt{\pi}} \cos n \xi, ... \right),\]
+   jest ortonormalny i zupełny, a więc stanowi tzw. \underline{trygonometryczną bazę hilbertowską} -- ``podstawę'' trygonometrycznych szeregów Fouriera.
+   
+   Rozwinięcie w szereg trygonometryczny Fouriera funkcji $f: (0,2\pi) \to \real$ całkowalnej z kwadratem na przedziale $(0, 2\pi)$ (tzn. $\int\limits_0^{2\pi} f^2(\xi) d\xi < \infty$),
+   czyli
+   \[f(\xi) = \sum\limits_{n=0}^{0}\]
+\end{example}
